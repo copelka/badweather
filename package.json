@@ -1,0 +1,60 @@
+{
+  "name": "badweather",
+  "version": "1.0.0",
+  "description": "Weather App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server/index.js",
+    "build": "webpack",
+    "dev": "webpack --watch",
+    "lint": "eslint ./"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/copelka/badweather.git"
+  },
+  "author": "Caity Opelka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/copelka/badweather/issues"
+  },
+  "homepage": "https://github.com/copelka/badweather#readme",
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^9.0.2",
+    "express": "^4.17.1",
+    "mongod": "^2.0.0",
+    "mongoose": "^5.12.9",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.16",
+    "@babel/core": "^7.14.2",
+    "@babel/preset-env": "^7.14.2",
+    "@babel/preset-react": "^7.13.13",
+    "babel-loader": "^8.2.2",
+    "eslint": "^7.26.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "husky": "^6.0.0",
+    "lint-staged": "^11.0.0",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0"
+  }
+}
