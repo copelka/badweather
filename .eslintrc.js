@@ -14,6 +14,7 @@ module.exports = {
     'import/extensions': [
       '.js',
       '.jsx'
-    ]
+    ],
+    'no-console': [2, { allow: ['info', 'warn'] }],
   },
 };
