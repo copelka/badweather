@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
+import Forecasts from './Forecasts.jsx';
 import axios from 'axios';
 import Search from './Search.jsx';
+import styled from 'styled-components';
+import './styles.css'
+const Container = styled.div`
+  margin: 0 auto;
+  width: 50%;
+`;
+
+const H1 = styled.h1`
+  font-family: 'Averia Sans Libre', cursive;
+  text-align: center;
+`;
 
 const App = () => {
   const [ forecasts, setForecasts ] = useState([]);
@@ -12,19 +24,12 @@ const App = () => {
     .catch((err) => console.warn(err));
   }
 
-  const celsiusToFahrenheit = (celsius) => Math.round(celsius * (9 / 5) + 32);
-
   return (
-    <div>
-      <h1>Bad Weather</h1>
-
+    <Container>
+      <H1>bad weather</H1>
       <Search onSearch={handleSearch} />
-      {forecasts.map(({city_name, temp}, i) => (
-        <div key={String(i)}>
-          <h3>{city_name}: {celsiusToFahrenheit(temp)}°F</h3>
-        </div>
-      ))}
-    </div>
+      <Forecasts forecasts={forecasts} />
+    </Container>
   );
 }
 

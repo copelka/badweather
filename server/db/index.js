@@ -20,17 +20,24 @@ const saveForecast = (forecastObj) => {
     temp: celsiusToFahrenheit(forecastObj.temp),
   });
   return Forecast.updateOne({city: forecastObj.city_name}, forecast, {upsert: true})
-    .then((data) => res.status(200).send(data))
-    .catch((err) => res.sendStatus(500));;
+    .then(data => res.status(200).send(data))
+    .catch(err => res.sendStatus(500));;
 };
 
 const findForecast = () => {
   return Forecast.find().limit(1)
-    .then((data) => res.status(200).send(data))
-    .catch((err) => res.sendStatus(500));
+    .then(data => res.status(200).send(data))
+    .catch(err => res.sendStatus(500));
+}
+
+const deleteForecast = (id) => {
+  return Forecast.deleteOne({ id })
+  .then(data => res.status(202).send(data))
+  .catch(err => res.sendStatus(500))
 }
 
 module.exports = {
   saveForecast,
-  findForecast
+  findForecast,
+  deleteForecast
 };

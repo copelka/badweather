@@ -7,7 +7,6 @@ const getForecastByZipCode = (zipOrCity) => {
 
   const url = `http://api.weatherbit.io/v2.0/current?${prefix}=${zipOrCity}&key=${config.WEATHERBIT_TOKEN}`;
 
-
   return axios.get(url)
     .then(({ data }) => data)
     .catch((err) => console.warn(err));

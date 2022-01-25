@@ -37,13 +37,16 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "css-loader": "^6.5.1",
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "mongod": "^2.0.0",
     "mongoose": "^5.12.9",
     "prop-types": "^15.7.2",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "style-loader": "^3.3.1",
+    "styled-components": "^5.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.16",

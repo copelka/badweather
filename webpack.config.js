@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const srcPath = path.resolve(__dirname, 'client', 'src');
 const distPath = path.resolve(__dirname, 'client', 'dist');
@@ -23,6 +24,10 @@ module.exports = {
             plugins: ["@babel/plugin-transform-runtime"]
           },
         },
+      },
+      {
+        test: /\.(css)$/,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
