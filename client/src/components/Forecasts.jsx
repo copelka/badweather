@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import Forecast from './Forecast.jsx'
 
-const Forecasts = ({ forecasts }) => {
+const Forecasts = ({ forecasts }) => (
+  forecasts.map((forecast, i) => {
+    // console.log(forecast);
+    const {city_name, temp, ts} = forecast;
 
-  return forecasts.map(({city_name, temp}, i) => (
-    <Forecast
-      key={String(city_name + i)}
-      city={city_name}
-      temp={temp}
-    />
-  ));
-}
+    return (
+      <Forecast
+        key={String(city_name + i + ts)}
+        city={city_name}
+        temp={temp}
+      />
+    )
+  })
+);
 
 export default Forecasts;
