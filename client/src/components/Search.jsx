@@ -16,7 +16,10 @@ const Search = ({ onSearch }) => {
 
   const handleChange = (e) => setZipOrCity(e.target.value);
 
-  const handleClick = () => onSearch(zipOrCity);
+  const handleClick = (e) => {
+    e.preventDefault();
+    onSearch(zipOrCity)
+  };
 
   return (
     <div>
@@ -24,7 +27,8 @@ const Search = ({ onSearch }) => {
       <input value={zipOrCity} onChange={handleChange} />
       <Button
         onClick={handleClick}
-        type="button">Get current temperature</Button>
+        type="button">Get current temperature
+      </Button>
     </div>
   );
 }

@@ -1,13 +1,11 @@
 const axios = require('axios');
-const config = require('../config');
+const { WEATHERBIT_TOKEN } = require('../config');
 
 const getForecastByZipCode = (zipOrCity) => {
 
   let prefix = !isNaN(Number(zipOrCity)) ? 'postal_code' : 'city';
 
-  const url = `http://api.weatherbit.io/v2.0/current?${prefix}=${zipOrCity}&key=${config.WEATHERBIT_TOKEN}`;
-
-  return axios.get(url)
+  return axios.get(`http://api.weatherbit.io/v2.0/current?${prefix}=${zipOrCity}&key=${WEATHERBIT_TOKEN}`)
     .then(({ data }) => data)
     .catch((err) => console.warn(err));
 };

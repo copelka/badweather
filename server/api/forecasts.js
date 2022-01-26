@@ -11,8 +11,8 @@ Forecasts.get('/', (req, res) => {
 });
 
 Forecasts.post('/', (req, res) => {
-  const { zip } = req.body;
-  getForecastByZipCode(zip)
+  const { zipOrCity } = req.body;
+  getForecastByZipCode(zipOrCity)
     .then((forecast) => res.status(200).send(forecast))
     .catch((err) => console.warn(err));
 });
