@@ -5,13 +5,14 @@ import Search from './Search.jsx';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  margin: 0 auto;
-  width: 50%;
+  align-items: center;
+  width: 100%;
 `;
 
 const H1 = styled.h1`
   font-family: 'Averia Sans Libre', cursive;
   text-align: center;
+  font-size: 3em;
 `;
 
 const App = () => {

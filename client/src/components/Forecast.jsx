@@ -6,14 +6,15 @@ const Forecast = ({ city, temp }) => {
   const celsiusToFahrenheit = (celsius) => Math.round(celsius * (9 / 5) + 32);
 
   const ForecastCard = styled.div`
-    width: 250px;
-    display: flex;
+    width: 100%;
     justify-content: center;
-    flex-flow: column;
+    background-color: blue;
   `
 
   const CurrentTemperature = styled.div`
-    font-size: 3em;
+    font-size: 10em;
+    font-family: 'Averia Sans Libre', cursive;
+    align-items: center;
   `
 
   return (
