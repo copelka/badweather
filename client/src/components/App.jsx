@@ -5,8 +5,9 @@ import Search from './Search.jsx';
 import styled from 'styled-components';
 
 const Container = styled.div`
-  align-items: center;
   width: 100%;
+  justify-content: center;
+  align-items: center;
 `;
 
 const H1 = styled.h1`

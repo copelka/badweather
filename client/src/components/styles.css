@@ -1,9 +1,9 @@
 body {
   margin: 0;
-  width: 100%;
+  width: 100vw;
   display: flex;
   justify-content: center;
   font-family: "Ubuntu", sans-serif;
-  background-color: #000112;
+  background-color: #00032e;
   color: #f2d13d;
 }

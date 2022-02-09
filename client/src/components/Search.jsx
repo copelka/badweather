@@ -45,7 +45,7 @@ const Search = ({ onSearch }) => {
       <Input value={zipOrCity} onChange={handleChange} placeholder='zip code or city'/>
       <Button
         onClick={handleClick}
-        type="button">Get current temperature
+        type="button">gimme gimme temp
       </Button>
     </SearchContainer>
   );
